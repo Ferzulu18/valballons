@@ -38,7 +38,10 @@ Configuramos apache
 sudo mv ~/valballons /var/www/valballons
 
 sudo chown -R www-data.www-data /var/www/valballons/storage
+sudo chmod -R 777 /var/www/valballons/storage
+
 sudo chown -R www-data.www-data /var/www/valballons/bootstrap/cache
+sudo chmod -R 777 /var/www/valballons/bootstrap/cache
 
 sudo nano /etc/apache2/sites-available/valballons.conf
 
@@ -63,3 +66,13 @@ sudo nano /etc/hosts
 sudo systemctl reload apache2
 
 http://valballons
+
+
+Migración
+
+php artisan migrate
+
+
+
+Lanzar el servidor propio de Laravel:
+php artisan serve
